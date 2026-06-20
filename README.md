@@ -98,8 +98,8 @@ Output_result/
 
 ```bash
 # Change output directory
---infer_out_dir ./my_results
---matches_dump_dir ./my_results/matches
+--infer_out_dir ./Output_Results
+--matches_dump_dir ./Output_Results/matches
 ```
 
 ## Citation
