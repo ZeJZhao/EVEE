@@ -1,0 +1,20 @@
+# Core runtime dependencies for EVEE.
+# Reference environment: conda env "Zj" on Python 3.10.11.
+#
+# Install PyTorch separately before this file, matching your CUDA version.
+# The tested environment uses:
+#   torch==2.1.2+cu121
+#   torchvision==0.16.2
+#
+# Example:
+#   pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements.txt
+
+numpy==1.26.4
+opencv-python==4.10.0.84
+mamba-ssm==2.2.4
+causal-conv1d==1.5.0.post8
+pillow==10.3.0
+
+# Optional acceleration. Install only if it matches your CUDA setup.
+# cupy-cuda12x==13.3.0
