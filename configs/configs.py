@@ -1,0 +1,2 @@
+real_THRESHOLD_RE = 0.01
+real_THRESHOLD_RB = 0.01
