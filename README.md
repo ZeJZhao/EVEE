@@ -9,23 +9,21 @@ EVEE performs event-driven online adaptation for local feature detection and mat
 ### 1. Clone
 
 ```bash
-git clone https://github.com/ZeJZhao/EVEE.git
+git clone https://github.com/<your-username>/EVEE.git
 cd EVEE
 ```
 
 ### 2. Create Environment
 
-Install PyTorch for your CUDA version first, then install the remaining packages:
+Create a conda environment, install PyTorch for your CUDA version, then install the packages listed in `requirements.txt`.
 
 ```bash
 conda create -n evee python=3.10 -y
 conda activate evee
 
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
-pip install numpy opencv-python pillow mamba-ssm
+pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
 ```
-
-CuPy is optional. If it is installed and compatible with your CUDA version, EVEE will use it automatically.
 
 ### 3. Prepare Weights
 
@@ -33,14 +31,7 @@ Place the pretrained weights in the following paths:
 
 ```text
 weights/PrEEVEE.pth
-weights/online_head_best.pth
 core/MagicPoint_Weight/MagicPoint_Weight.pth
-```
-
-For ReWeight, set the checkpoint path explicitly:
-
-```bash
-export EVEE_REWEIGHT_CKPT=./weights/PrEEVEE.pth
 ```
 
 ### 4. Prepare Data
@@ -65,7 +56,7 @@ dataset/
         ├── events/
             ├── frame_00000.png
             └── ...
-    
+
 ```
 
 `images/` contains RGB frames, `events/` contains event-frame supervision, and `masks/` contains foreground masks.
@@ -73,7 +64,7 @@ dataset/
 ### 5. Run EVEE
 
 ```bash
-python EVEE.py \
+python EVEE.py
 ```
 
 ### 6. Outputs
@@ -93,22 +84,23 @@ Output_result/
 
 `FPS_result.txt` is written in the current working directory and stores the final FPS values.
 
+## Common Options
 
-## Notes
-
-- Run commands from the repository root so relative paths resolve correctly.
-- `events/` is used for online proxy supervision. If no valid event frames are found, the training stage is skipped.
-- Visualization frames are saved with the original RGB background while masks are still used for model-side ROI gating.
-- The default output directory is configured in `utils/reader/reader.py`.
+```bash
+# Change output directory
+--infer_out_dir ./my_results
+--matches_dump_dir ./my_results/matches
+```
 
 ## Citation
 
 If EVEE is useful for your research, please cite:
 
 ```bibtex
-@inproceedings{evee2026,
-  title     = {EVEE: Event-Based Online Adaptation for Matching on Unknown Targets},
-  booktitle = {ECCV},
-  year      = {2026}
-}
+  @inproceedings{zhao2026evee,
+    title     = {{EVEE}: Event-Based Online Adaptation for Matching on Unknown Targets},
+    author    = {Zhao, Zejing and Ju, Cheng and Zhang, Yanwen and Namiki, Akio},
+    booktitle = {European Conference on Computer Vision (ECCV)},
+    year      = {2026}
+  }
 ```
