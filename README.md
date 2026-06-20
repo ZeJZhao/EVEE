@@ -9,14 +9,8 @@ EVEE performs event-driven online adaptation for local feature detection and mat
 ### 1. Clone
 
 ```bash
-git clone https://github.com/<your-username>/EVEE.git
+git clone https://github.com/ZeJZhao/EVEE.git
 cd EVEE
-```
-
-If you are using the local release directory directly:
-
-```bash
-cd /home/zj/EVEE_PUB
 ```
 
 ### 2. Create Environment
@@ -69,11 +63,9 @@ dataset/
         │   ├── frame_00000.png
         │   └── ...
         ├── events/
-        │   ├── frame_00000.png
-        │   └── ...
-        └── masks/
             ├── frame_00000.png
             └── ...
+    
 ```
 
 `images/` contains RGB frames, `events/` contains event-frame supervision, and `masks/` contains foreground masks.
@@ -82,13 +74,6 @@ dataset/
 
 ```bash
 python EVEE.py \
-  --ckpt ./weights/PrEEVEE.pth \
-  --rgb_dir ./dataset/bunny_racer/video-05-pixel_7-PXL_20230728_005055979.TS/images \
-  --event_dir ./dataset/bunny_racer/video-05-pixel_7-PXL_20230728_005055979.TS/events \
-  --infer_dir ./dataset/bunny_racer/video-05-pixel_7-PXL_20230728_005055979.TS/images \
-  --mask_dir ./dataset/bunny_racer/video-05-pixel_7-PXL_20230728_005055979.TS/masks \
-  --infer_out_dir ./Output_result \
-  --matches_dump_dir ./Output_result/matches
 ```
 
 ### 6. Outputs
@@ -108,25 +93,6 @@ Output_result/
 
 `FPS_result.txt` is written in the current working directory and stores the final FPS values.
 
-## Common Options
-
-```bash
-# Change output directory
---infer_out_dir ./my_results
---matches_dump_dir ./my_results/matches
-
-# Reduce memory usage
---max_size 320
-
-# Change matching export mode
---dump_matcher desc_ransac
---dump_matcher nn_px
-
-# Tune keypoint count
---topk_ronly 480
---topk_bank 480
---topk_evt 480
-```
 
 ## Notes
 
