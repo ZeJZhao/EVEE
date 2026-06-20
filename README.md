@@ -9,22 +9,29 @@ EVEE performs event-driven online adaptation for local feature detection and mat
 ### 1. Clone
 
 ```bash
-git clone https://github.com/ZeJZhao/EVEE.git
+git clone https://github.com/<your-username>/EVEE.git
 cd EVEE
 ```
 
 ### 2. Create Environment
 
-Create a conda environment, install PyTorch for your CUDA version, then install the packages listed in `requirements.txt`.
+Create a conda environment, install PyTorch for your CUDA version, then install the base packages and Mamba-related CUDA extensions.
 
 ```bash
 conda create -n evee python=3.10 -y
 conda activate evee
 
+pip install pip==24.0 setuptools==69.5.1 wheel==0.43.0
 pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
 pip install --no-build-isolation -r requirements-mamba.txt
 ```
+
+The pinned `setuptools` version is required because newer conda environments may install a very recent `setuptools` that no longer exposes `pkg_resources`, while PyTorch 2.1.2 still imports it during CUDA extension builds.
+
+`transformers` is pinned to `4.28.1` for compatibility with `mamba-ssm==2.2.4` and `torch==2.1.2`. Newer `transformers` releases may require newer PyTorch versions and break `mamba_ssm` imports.
+
+`causal-conv1d` and `mamba-ssm` are installed with `--no-build-isolation` because their build scripts import `torch` during installation. If they are installed through a normal isolated pip build, pip may report `ModuleNotFoundError: No module named 'torch'` even after PyTorch has already been installed.
 
 ### 3. Prepare Weights
 
@@ -98,10 +105,9 @@ Output_result/
 If EVEE is useful for your research, please cite:
 
 ```bibtex
-  @inproceedings{zhao2026evee,
-    title     = {{EVEE}: Event-Based Online Adaptation for Matching on Unknown Targets},
-    author    = {Zhao, Zejing and Ju, Cheng and Zhang, Yanwen and Namiki, Akio},
-    booktitle = {European Conference on Computer Vision (ECCV)},
-    year      = {2026}
-  }
+@inproceedings{evee2026,
+  title     = {EVEE: Event-Based Online Adaptation for Matching on Unknown Targets},
+  booktitle = {ECCV},
+  year      = {2026}
+}
 ```
