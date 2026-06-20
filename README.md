@@ -24,12 +24,12 @@ conda activate evee
 pip install pip==24.0 setuptools==69.5.1 wheel==0.43.0
 pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
-pip install --no-build-isolation -r requirements-mamba.txt
+pip install --no-build-isolation -r requirements_M.txt
 ```
 
 The pinned `setuptools` version is required because newer conda environments may install a very recent `setuptools` that no longer exposes `pkg_resources`, while PyTorch 2.1.2 still imports it during CUDA extension builds.
 
-`cupy-cuda12x` is included for CUDA runs and matches the tested `Zj` environment. Without CuPy, RGB tensors may stay on CPU while masks are moved to CUDA, which can trigger a CPU/CUDA device mismatch in the current release code.
+`cupy-cuda12x` is included for CUDA runs and matches the tested `evee` environment. Without CuPy, RGB tensors may stay on CPU while masks are moved to CUDA, which can trigger a CPU/CUDA device mismatch in the current release code.
 
 `transformers` is pinned to `4.28.1` for compatibility with `mamba-ssm==2.2.4` and `torch==2.1.2`. Newer `transformers` releases may require newer PyTorch versions and break `mamba_ssm` imports.
 
