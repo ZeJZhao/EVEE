@@ -109,6 +109,7 @@ If EVEE is useful for your research, please cite:
 ```bibtex
 @inproceedings{evee2026,
   title     = {EVEE: Event-Based Online Adaptation for Matching on Unknown Targets},
+  author    = {Zhao, Zejing and Ju, Cheng and Zhang, Yanwen and Namiki, Akio},
   booktitle = {ECCV},
   year      = {2026}
 }
