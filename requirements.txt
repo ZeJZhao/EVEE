@@ -9,12 +9,13 @@
 # Example:
 #   pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
 #   pip install -r requirements.txt
+#   pip install --no-build-isolation -r requirements-mamba.txt
 
 numpy==1.26.4
 opencv-python==4.10.0.84
-mamba-ssm==2.2.4
-causal-conv1d==1.5.0.post8
 pillow==10.3.0
+packaging
+ninja
 
 # Optional acceleration. Install only if it matches your CUDA setup.
 # cupy-cuda12x==13.3.0
