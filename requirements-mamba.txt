@@ -1,0 +1,6 @@
+# Mamba/CUDA extension dependencies.
+# Install after torch is installed:
+#   pip install --no-build-isolation -r requirements-mamba.txt
+
+causal-conv1d==1.5.0.post8
+mamba-ssm==2.2.4
