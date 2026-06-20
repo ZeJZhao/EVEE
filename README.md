@@ -9,7 +9,7 @@ EVEE performs event-driven online adaptation for local feature detection and mat
 ### 1. Clone
 
 ```bash
-git clone https://github.com/<your-username>/EVEE.git
+git clone https://github.com/ZeJZhao/EVEE.git
 cd EVEE
 ```
 
