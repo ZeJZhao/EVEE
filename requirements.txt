@@ -19,6 +19,4 @@ opencv-python==4.10.0.84
 pillow==10.3.0
 packaging
 ninja
-
-# Optional acceleration. Install only if it matches your CUDA setup.
-# cupy-cuda12x==13.3.0
+cupy-cuda12x==13.3.0
