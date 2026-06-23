@@ -4,6 +4,8 @@ Official implementation of **EVEE: Event-Based Online Adaptation for Matching on
 
 EVEE performs event-driven online adaptation for local feature detection and matching on previously unseen targets. It uses event streams as proxy supervision and combines TraW, EVB, and ReWeight for efficient target-aware matching.
 
+Our method was developed and tested on **Ubuntu 22.04/24.04**. Compatibility with macOS and Windows has **not yet been verified**.
+
 ## Quick Start
 
 ### 1. Clone
