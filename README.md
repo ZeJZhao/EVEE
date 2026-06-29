@@ -52,7 +52,7 @@ core/MagicPoint_Weight/MagicPoint_Weight.pth
 Download the example dataset from Google Drive:
 
 ```text
-https://drive.google.com/file/d/1zl7JL_-8Qu4u18kL4R_5tw1XFNK4D24i/view?usp=drive_link
+https://drive.google.com/file/d/1F-iJIufyu1hAT6YF5yItMk2IVsPeLPzG/view?usp=drive_link
 ```
 
 After downloading, extract it under `dataset/`.
