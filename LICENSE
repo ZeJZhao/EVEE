@@ -1,0 +1,11 @@
+  EVEE is a research prototype intended for academic research and evaluation. The code, pretrained weights, configuration files, and accompanying materials are provided “as is,” without warranties
+  of any kind, either express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+  Performance and reproducibility may vary depending on hardware, operating systems, CUDA and dependency versions, random seeds, dataset preparation, and input conditions. This project has not
+  been designed, validated, or audited for production, safety-critical, or high-risk applications.
+
+  Users are solely responsible for evaluating the suitability of EVEE for their intended use, complying with applicable laws and institutional policies, and respecting the licenses, terms of
+  use, privacy requirements, and intellectual property rights associated with third-party software, pretrained components, and datasets.
+
+  The authors and their affiliated institutions shall not be held liable for any direct, indirect, incidental, special, consequential, or other damages arising from the use, modification,
+  distribution, or inability to use this repository. References or links to third-party resources do not imply endorsement, and those resources remain subject to their respective terms and licenses.
