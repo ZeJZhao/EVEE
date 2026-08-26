@@ -1,4 +1,6 @@
 # EVEE
+This is the original version of the code for now — we’re working super super super hard to clean everything up and bring you the full version soon! 🥵💻✨
+
 Project page: https://zejzhao.github.io/EVEE-project/
 
 Official implementation of **EVEE: Event-Based Online Adaptation for Matching on Unknown Targets**, accepted at **ECCV 2026**.
