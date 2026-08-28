@@ -1,5 +1,5 @@
 # EVEE
-This is the original version of the code for now — we’re working super super super hard to clean everything up and bring you the full version soon! 🥵💻✨
+This is the original version of the code for now — we’re working su-------per hard to clean everything up and bring you the full version soon! 🥵💻✨
 If you run into any issues with the current version, feel free to leave a message — I’ll do my best to respond and fix things as quickly as possible! 🫡✨
 
 💻Project page: https://zejzhao.github.io/EVEE-project/
